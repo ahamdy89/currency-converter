@@ -1,0 +1,13 @@
+.layout-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "navbar"
+    "content"
+    "footer";
+}
+
+.footer-container {
+    bottom: 0;
+    position: fixed;
+}
