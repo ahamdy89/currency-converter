@@ -19,8 +19,8 @@ export class NavbarComponent {
 
 
   navLinks: NavLink[] = [
-    { path: '/eur-usd', label: 'EUR-USD Details' },
-    { path: '/eur-gbp', label: 'EUR-GBP Details' }
+    { path: '/details', label: 'EUR-USD Details' },
+    { path: '/details', label: 'EUR-GBP Details' }
   ];
 
   currentUrl: string = '/';
@@ -49,4 +49,5 @@ export class NavbarComponent {
   toggleNav() {
     this.isNavVisible = !this.isNavVisible;
   }
+
 }

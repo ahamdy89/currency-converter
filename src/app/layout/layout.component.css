@@ -11,3 +11,8 @@
     bottom: 0;
     position: fixed;
 }
+
+.content-container {
+    height: 100%;
+    padding-block: 3rem;
+}

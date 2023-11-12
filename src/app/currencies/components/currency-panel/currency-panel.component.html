@@ -1,0 +1,40 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="converter-container">
+        <div class="amount-rate-container">
+            <div class="input-container">
+                <label for="amount">amount</label>
+                <input type="number" id="amount" name="amount" formControlName="amount"/>
+                <!-- will add validation here -->
+              </div>
+              <div>
+                rate conversion number
+              </div>
+        </div>
+        <div class="converter-inputs-container">
+            <div class="converter-inputs">
+                <div class="input-container">
+                    <label for="from">From</label>
+                    <select id="from" name="from" formControlName="from">
+                      <option value="" disabled selected>Select Currency</option>
+                      <option *ngFor="let currency of currencies | keyvalue" id={{currency.key}} [value]="currency.key">{{ currency.key }}</option>
+                    </select>
+                   <!-- will add validation here -->
+                  </div>
+                <button (click)="swapValues()">Swap Values</button>
+              
+                  <div class="input-container">
+                    <label for="to">To</label>
+                    <select id="to" name="to" formControlName="to">
+                      <option value="" disabled selected>Select Currency</option>
+                      <option *ngFor="let currency of currencies | keyvalue" id={{currency.key}} [value]="currency.key">{{ currency.key }}</option>
+                    </select>
+                    <!-- will add validation here -->
+                  </div>
+            </div>
+              
+              <button type="submit" [disabled]="form.invalid" style="width: 50%">Convert</button>
+              <div>
+                  <h3>Result:</h3>
+                  <p>{{ result }}</p>
+              </div>
+        </div>
+</form>
