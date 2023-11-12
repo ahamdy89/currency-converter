@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CurrenciesService } from './currencies/services/currencies.service';
+import { CurrenciesList, RatesList } from './models';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor() {}
+  currenciesList: CurrenciesList = {success:false, symbols:null};
+  ratesList: RatesList = {success:false, rates:null};
+
+  constructor(private currencyService: CurrenciesService) {}
+
+  ngOnInit() {
+    this.currencyService.getCurrenciesList().subscribe(data => {
+      this.currenciesList.symbols = data['symbols'];
+    });
+
+    this.currencyService.getRatesList().subscribe(data => {
+      this.ratesList = data['rates'];
+    });
   }
+}

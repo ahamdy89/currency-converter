@@ -1,0 +1,28 @@
+.converter-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 60%;
+}
+
+.amount-rate-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.converter-inputs-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.converter-inputs {
+    display: flex;
+    gap: 1rem;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
