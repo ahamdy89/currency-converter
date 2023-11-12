@@ -12,6 +12,7 @@ import { CurrencyPanelComponent } from './currencies/components/currency-panel/c
 import { CurrencyDetailsPageComponent } from './currencies/currency-details-page/currency-details-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppService } from './app.service';
+import { PopularCurrenciesComponent } from './home/components/popular-currencies/popular-currencies.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AppService } from './app.service';
     NavbarComponent,
     CurrencyPanelComponent,
     CurrencyDetailsPageComponent,
+    PopularCurrenciesComponent,
   ],
   imports: [
     BrowserModule,

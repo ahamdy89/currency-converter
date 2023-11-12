@@ -1,7 +1,7 @@
 .converter-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    height: 60%;
+    margin-block-end: 2rem;
 }
 
 .amount-rate-container {

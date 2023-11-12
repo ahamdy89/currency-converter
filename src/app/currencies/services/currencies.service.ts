@@ -25,7 +25,6 @@ interface FetchConvertedCurrencyArgs {
 export class CurrenciesService {
   private currenciesApiUrl = `${environment.apiUrl}/symbols`;
   private ratesApiUrl = `${environment.apiUrl}/latest`;
-  private converterApiUrl = `${environment.apiUrl}/convert`;
   private apiKey = environment.apiKey;
 
 

@@ -1,0 +1,27 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    margin-block: 2rem;
+}
+
+.currency-rate-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.currency-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.image-container {
+    width: 1rem;
+}
+
+.image-container img {
+    width: 100%;
+}

@@ -1,0 +1,18 @@
+<div class="grid-container">
+    <div *ngFor="let rate of randomRates" class="currency-rate-container">
+        <div class="currency-container">
+            <div>
+                {{rate.convertedCurrency ? rate.convertedCurrency : "EUR"}}
+            </div>
+            <div class="image-container">
+                <img src="assets/icons/right-arrow.svg"/>
+            </div>
+            <div>
+                {{rate.currency}}
+            </div>
+        </div>
+        <div>
+            {{rate.fromCurrencyRate ? ((rate.rate  / rate.fromCurrencyRate) * rate.convertedAmount).toFixed(3) : 0}}
+        </div>
+    </div>
+</div>

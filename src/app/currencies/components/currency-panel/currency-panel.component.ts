@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CurrenciesService } from '../../services/currencies.service';
 import { CurrenciesList, RatesList } from '../../../models';
+import { SharedService } from '../../../home/services/shared.service';
 
 @Component({
   selector: 'app-currency-panel',
@@ -14,7 +15,7 @@ export class CurrencyPanelComponent {
   currencies: CurrenciesList["symbols"] = null;
   rates: RatesList["rates"] = null;
 
-  constructor(private fb: FormBuilder, private currenciesService: CurrenciesService) {
+  constructor(private fb: FormBuilder, private currenciesService: CurrenciesService, private sharedService: SharedService) {
     this.form = this.fb.group({
       from: [{value:'EUR', disabled: true}, Validators.required],
       to: [{value:'USD', disabled: true}, Validators.required],
@@ -23,7 +24,7 @@ export class CurrencyPanelComponent {
 
     this.currenciesService.getCurrenciesList().subscribe(currencies=> this.currencies = currencies.symbols)
     this.currenciesService.getRatesList().subscribe(rates=> this.rates = rates.rates)
-    
+
     this.form.get('amount')?.valueChanges.subscribe(amount => {
       if (amount !== null) {
         this.form.get('from')?.enable();
@@ -58,5 +59,7 @@ export class CurrencyPanelComponent {
       const convertedCurrency =  ((conversionToRate / conversionFromRate) * amountValue)
       this.result = parseFloat(convertedCurrency.toFixed(3))
     } 
+
+    this.sharedService.updateFormValues({ amount: amountValue, from: fromCurrencyValue, fromCurrencyRate: conversionFromRate! });
   }
 }
