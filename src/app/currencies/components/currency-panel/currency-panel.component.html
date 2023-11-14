@@ -1,13 +1,15 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()" class="converter-container">
         <div class="amount-rate-container">
             <div class="input-container">
-                <label for="amount">amount</label>
+                <label for="amount">Amount</label>
                 <input type="number" id="amount" name="amount" formControlName="amount"/>
                 <!-- will add validation here -->
-              </div>
-              <div>
-                rate conversion number
-              </div>
+            </div>
+            <div *ngIf="rates" class="conversion-rate">
+              1.00 {{ detailsFromCurrency || "EUR" }} = {{
+                (((rates[detailsToCurrency] || rates["USD"]) / (rates[detailsFromCurrency] || rates["EUR"])) * 1).toFixed(3)
+              }} {{ detailsToCurrency|| "USD" }}
+            </div>
         </div>
         <div class="converter-inputs-container">
             <div class="converter-inputs">
@@ -19,7 +21,7 @@
                     </select>
                    <!-- will add validation here -->
                   </div>
-                <button (click)="swapValues()">Swap Values</button>
+                <button (click)="swapValues()"><img src="assets/icons/convert.svg" alt="swap-button-icon"/></button>
               
                   <div class="input-container">
                     <label for="to">To</label>
@@ -31,10 +33,9 @@
                   </div>
             </div>
               
-              <button type="submit" [disabled]="form.invalid" style="width: 50%">Convert</button>
-              <div>
-                  <h3>Result:</h3>
-                  <p>{{ result }}</p>
+              <button type="submit" [disabled]="form.invalid">Convert</button>
+              <div class="result-details-container">
+                  <p>{{ result }} {{detailsToCurrency || "USD"}}</p>
               </div>
         </div>
 </form>

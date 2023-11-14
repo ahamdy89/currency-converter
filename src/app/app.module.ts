@@ -13,6 +13,7 @@ import { CurrencyDetailsPageComponent } from './currencies/currency-details-page
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppService } from './app.service';
 import { PopularCurrenciesComponent } from './home/components/popular-currencies/popular-currencies.component';
+import { HomeCurrencyPanelComponent } from './home/components/home-currency-panel/home-currency-panel.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { PopularCurrenciesComponent } from './home/components/popular-currencies
     CurrencyPanelComponent,
     CurrencyDetailsPageComponent,
     PopularCurrenciesComponent,
+    HomeCurrencyPanelComponent,
   ],
   imports: [
     BrowserModule,

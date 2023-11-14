@@ -1,2 +1,9 @@
-<app-currency-panel></app-currency-panel>
-<app-popular-currencies></app-popular-currencies>
+<div class="home-page-container">
+    <div class="converter-panel-container">
+        <h1>Currency Exchanger</h1>
+        <app-home-currency-panel [currencies]="currencies" [rates]="rates"></app-home-currency-panel>
+    </div>
+    <div class="popular-currencies-container">
+        <app-popular-currencies></app-popular-currencies>
+    </div>
+</div>

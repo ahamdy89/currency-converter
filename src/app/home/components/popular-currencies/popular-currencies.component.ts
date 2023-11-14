@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component} from '@angular/core';
 import { RatesList } from '../../../models';
 import { CurrenciesService } from '../../../currencies/services/currencies.service';
 import { tap } from 'rxjs';

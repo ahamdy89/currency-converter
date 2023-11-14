@@ -1,1 +1,7 @@
-<p>currency-details-page works!</p>
+<div class="currency-details-container">
+    <div class="page-header">
+        <h1>{{pageTitle}}</h1>
+        <button routerLink="/">Back to Home</button>
+    </div>
+    <app-currency-panel (currencyFrom)="changeFromCurrency($event)" [currencies]="currencies" [rates]="rates" [homeConverterValues]="converterValues" ></app-currency-panel>
+</div>

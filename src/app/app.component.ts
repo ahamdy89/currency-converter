@@ -10,7 +10,7 @@ import { CurrenciesList, RatesList } from './models';
 export class AppComponent {
   currenciesList: CurrenciesList = {success:false, symbols:null};
   ratesList: RatesList = {success:false, rates:null};
-
+  last12MonthsDates:string[] = []
   constructor(private currencyService: CurrenciesService) {}
 
   ngOnInit() {
@@ -21,5 +21,7 @@ export class AppComponent {
     this.currencyService.getRatesList().subscribe(data => {
       this.ratesList = data['rates'];
     });
+
   }
+   
 }

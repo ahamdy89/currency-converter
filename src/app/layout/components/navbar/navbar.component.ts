@@ -33,7 +33,6 @@ export class NavbarComponent {
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
       this.currentUrl = this.router.url;
-      console.log(this.currentUrl)
     });
   }
 

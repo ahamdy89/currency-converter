@@ -1,18 +1,22 @@
 .layout-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-    "navbar"
-    "content"
-    "footer";
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.navbar-container{
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .footer-container {
     bottom: 0;
-    position: fixed;
+    margin-block-start: 3rem;
 }
 
 .content-container {
     height: 100%;
-    padding-block: 3rem;
+    padding-inline: 3rem;
+    margin-top: 72px;
 }

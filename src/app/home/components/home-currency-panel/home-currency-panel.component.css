@@ -93,6 +93,7 @@ input, select {
   .result-details-container {
     display: flex;
     align-items: center;
+    width: 30%;
   }
 
   .result-details-container p {
@@ -101,6 +102,7 @@ input, select {
     padding-inline: 2rem;
     padding-block: 1rem;
     margin-inline-end: 1rem;
+    width: 50%;
   }
 
   .result-details-container a {

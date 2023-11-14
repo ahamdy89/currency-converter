@@ -79,6 +79,8 @@ nav {
   
     .nav-links.show {
       display: flex;
+      height: 100%;
+      z-index: 1;
     }
   
     .nav-links li {
