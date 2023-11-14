@@ -14,6 +14,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppService } from './app.service';
 import { PopularCurrenciesComponent } from './home/components/popular-currencies/popular-currencies.component';
 import { HomeCurrencyPanelComponent } from './home/components/home-currency-panel/home-currency-panel.component';
+import { HistoricalChartComponent } from './currencies/components/historical-chart/historical-chart.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,12 +29,15 @@ import { HomeCurrencyPanelComponent } from './home/components/home-currency-pane
     CurrencyDetailsPageComponent,
     PopularCurrenciesComponent,
     HomeCurrencyPanelComponent,
+    HistoricalChartComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxChartsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     AppService,

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { Subscription, filter } from 'rxjs';
+import { Subscription, filter, from } from 'rxjs';
 import { CurrenciesList, RatesList } from '../../models';
 import { CurrenciesService } from '../services/currencies.service';
 import { SharedService } from '../../home/services/shared.service';
@@ -17,10 +17,8 @@ export class CurrencyDetailsPageComponent {
   toCurrency: string = ""; 
   currencies: CurrenciesList["symbols"] = null;
   rates: RatesList["rates"] = null;
-  last12MonthsDates:string[] = []
   private subscription: Subscription = new Subscription();
   converterValues: { amount: number, from: string, fromCurrencyRate: number, to:string, toCurrencyRate: number } = { amount: 0, from: 'EUR', fromCurrencyRate:0, to: 'EUR', toCurrencyRate:0 };
-
 
   constructor(private route: ActivatedRoute, private router: Router, private currenciesService: CurrenciesService, private sharedService: SharedService) {
     this.route.queryParams.subscribe(({from, to}) => {
@@ -36,7 +34,6 @@ export class CurrencyDetailsPageComponent {
 
     this.currenciesService.getCurrenciesList().subscribe(currencies=> this.currencies = currencies.symbols)
     this.currenciesService.getRatesList().subscribe(rates=> this.rates = rates.rates)
-    this.currenciesService.getHistoricalRates(this.last12MonthsDates, this.fromCurrency, this.toCurrency).subscribe(data => console.log(data))
   }
 
   ngOnInit(){
@@ -47,7 +44,6 @@ export class CurrencyDetailsPageComponent {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-
 
   changeFromCurrency(data: string) {
     this.currencyName = data;
