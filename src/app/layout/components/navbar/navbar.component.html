@@ -1,5 +1,5 @@
 <nav [class.mobile-view]="isMobileView">
-    <div class="logo-container"><img src="assets/icons/logo.svg" alt="logo-image"/></div>
+    <a class="logo-container" routerLink="/"><img src="assets/icons/logo.svg" alt="logo-image"/></a>
     <ul class="nav-links" [class.show]="isNavVisible">
       <li *ngFor="let link of navLinks" >
         <a routerLink={{link.path}} [queryParams]="{ from: link.label.substring(0, 3), to: link.label.substr(link.label.indexOf('-') + 1, 3)}"  routerLinkActive="active">{{ link.label }}</a>

@@ -1,0 +1,26 @@
+.page-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-header > button {
+    background-color: #007bff;
+    width: 15rem;
+    color: #fff;
+    padding-block: 0.625rem;
+    padding-inline: 1.25rem;
+    margin-block: 1rem;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+}
+
+.page-header > button:hover {
+    background-color: #66afe9;
+}
+  
+.page-header > button:active {
+    background-color: #007bff;
+}
