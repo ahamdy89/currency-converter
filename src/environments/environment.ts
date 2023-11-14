@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
     apiUrl: "http://data.fixer.io/api",
-    apiKey: "034082347b5e14b6591144c544d8b43e"
+    apiKey: "cddc11ec3e42f909cdf7cefac35593e7"
 };

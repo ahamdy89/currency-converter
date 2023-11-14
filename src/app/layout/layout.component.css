@@ -19,4 +19,5 @@
     height: 100%;
     padding-inline: 3rem;
     margin-top: 72px;
+    z-index: -1
 }

@@ -4,4 +4,5 @@
         <button routerLink="/">Back to Home</button>
     </div>
     <app-currency-panel (currencyFrom)="changeFromCurrency($event)" [currencies]="currencies" [rates]="rates" [homeConverterValues]="converterValues" ></app-currency-panel>
+    <app-historical-chart></app-historical-chart>
 </div>

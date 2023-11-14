@@ -79,14 +79,17 @@ nav {
   
     .nav-links.show {
       display: flex;
-      height: 100%;
-      z-index: 1;
+      height: 100vh;
+      margin: 2rem;
+      width: 100%;
     }
   
     .nav-links li {
       margin: 10px 0;
+      border-bottom: 1px solid black;
+      width: fit-content;
     }
-  
+
     .burger-icon {
       display: block;
     }

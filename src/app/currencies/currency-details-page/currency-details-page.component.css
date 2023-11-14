@@ -24,3 +24,9 @@
 .page-header > button:active {
     background-color: #007bff;
 }
+
+@media only screen and (max-width: 767px) {
+    .page-header{
+        flex-direction: column;
+    }
+}
