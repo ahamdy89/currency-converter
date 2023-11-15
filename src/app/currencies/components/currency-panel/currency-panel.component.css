@@ -138,4 +138,12 @@ input, select {
     .result-details-container{
         width: 100%;
     }
+
+    .input-container, .converter-inputs {
+      width: 100%;
+    }
+
+    input, select {
+      width: 100%;
+    }
   }
